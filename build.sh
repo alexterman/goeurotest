@@ -1,1 +1,2 @@
-#!/usr/bin/env bash
+#!/bin/bash
+mvn clean package
