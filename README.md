@@ -1,6 +1,6 @@
 # goeurotest
 
-# Direct Bus Assesment
+# Direct Bus Assessment
 
 ### Tech
 - Spring boot
