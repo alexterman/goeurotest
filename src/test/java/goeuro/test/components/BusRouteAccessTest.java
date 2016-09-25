@@ -48,7 +48,9 @@ public class BusRouteAccessTest {
     public void testDepartureStationNotFoundRequest() throws Exception {
 
         this.mockMvc.perform(get("/api/direct").param("dep_sid", "100").param("arr_sid", "3"))
-                .andDo(print()).andExpect(status().isNotFound());
+                .andDo(print()).andExpect(status().isOk())
+                .andExpect(jsonPath("$.direct_bus_route").value("false")
+        );
     }
 
 
