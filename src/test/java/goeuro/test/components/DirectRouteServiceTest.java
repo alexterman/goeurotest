@@ -1,7 +1,6 @@
 package goeuro.test.components;
 
 import goeuro.test.components.api.RoutesDataResolver;
-import goeuro.test.exception.StationIdNotFound;
 import org.assertj.core.api.Assertions;
 import org.junit.Test;
 
@@ -49,7 +48,7 @@ public class DirectRouteServiceTest {
 
     }
 
-    @Test(expected = StationIdNotFound.class)
+    @Test
     public void testMissingStationId (){
 
         DirectRouteService directRouteService = new DirectRouteService(new RoutesDataResolver() {
@@ -59,7 +58,7 @@ public class DirectRouteServiceTest {
             }
         });
 
-        Assertions.assertThat(directRouteService.areConnected(100,1)).isTrue();
+        Assertions.assertThat(directRouteService.areConnected(100,1)).isFalse();
     }
 
     @Test
@@ -106,7 +105,7 @@ public class DirectRouteServiceTest {
                 }
             });
         }catch (RuntimeException e){
-            Assertions.assertThat(e.getMessage()).isEqualTo("The route data is not valid: NULL");
+            Assertions.assertThat(e.getMessage()).isEqualTo("The route data can't be NULL");
         }
     }
 }
