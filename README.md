@@ -17,8 +17,7 @@
 ### Known problems
  - Trying to push 100000 routes with 1000 stations per each is not working due to GC overhead limit exceeded
 
-
-As possible solution I switched from building map of all stations to its neighbours on the right to 2 smaller maps: routeId to route list of stations and stationIds->all route ids its appears. The implementation of the second approach is in DirectRouteServicePerformance.java class (supplied in the code but not running), but it didn't solve the problem.
+   As possible solution I switched from building map of all stations to its neighbours on the right to 2 smaller maps: routeId    to route list of stations and stationIds->all route ids its appears. The implementation of the second approach is in      DirectRouteServicePerformance.java class (supplied in the code but not running), but it didn't solve the problem.
  
  
  - When running bash test run_test_local.sh
